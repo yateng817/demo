@@ -250,6 +250,7 @@ public class Chek {
     @Test
     public void testGit(){
         System.out.println("hhh");
+        System.out.println("hhn2");
     }
 
 
