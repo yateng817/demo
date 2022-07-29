@@ -253,7 +253,6 @@ public class Chek {
         System.out.println("hhn2");
         System.out.println("起飞喽");
         System.out.println("master");
-        System.out.println("wocalei");
     }
 
 
