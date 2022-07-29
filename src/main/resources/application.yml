@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    password: 111111
+    username: root
+    url: jdbc:mysql://localhost:3306/nbjyj_zzzlxt?&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  #想要配置文件生效就要扫描后加入bean
+  # 指定全局配置文件位置
+  #config-location: classpath:mybatis/mybatis-config.xml
+  # 指定sql映射文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
