@@ -251,6 +251,7 @@ public class Chek {
     public void testGit(){
         System.out.println("hhh");
         System.out.println("hhn2");
+        System.out.println("起飞喽");
     }
 
 
