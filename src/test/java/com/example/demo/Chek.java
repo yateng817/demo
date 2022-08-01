@@ -1,15 +1,9 @@
 package com.example.demo;
 
 import com.alibaba.excel.EasyExcel;
-import com.example.demo.listener.CheckListener;
-import com.example.demo.listener.StudentListener;
-import com.example.demo.listener.SupplementListener;
-import com.example.demo.listener.SupplementRuleListener;
+import com.example.demo.listener.*;
 import com.example.demo.mapper.*;
-import com.example.demo.pojo.Check;
-import com.example.demo.pojo.Student;
-import com.example.demo.pojo.SupplementRule;
-import com.example.demo.pojo.SupplementStu;
+import com.example.demo.pojo.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,6 +28,19 @@ public class Chek {
     @Autowired
     private SupplementRuleMapper supplementRuleMapper;
 
+
+    @Test
+    void Chek5Year(){//自主招生录取
+        List<AdvanceStuInfo> advanceStuInfos=new ArrayList<>();
+        Student student = null;
+        EasyExcel.read("1/2.xlsx", AdvanceStuInfo.class, new AdvanceListener(advanceStuInfos)).sheet().doRead();
+
+        for(AdvanceStuInfo data : advanceStuInfos){
+            if(!data.getWill1().equals(enrolResultMapper.getMajorId(data.getExaminationId()))){
+                System.out.println(data.getName()+" "+data.getWill1()+" "+enrolResultMapper.getMajorId(data.getExaminationId()));
+            }
+        }
+    }
 
     @Test
     void checkSupplementEnrol(){

@@ -29,6 +29,9 @@ public interface EnrolResultMapper {
     List<Student> getAllEnrol();
 
 
+    @Select("select major_id from enrol_result_tbl where examination_id = #{id}")
+    String getMajorId(@Param("id")String id);
+
 
 
     @Select("select * from enrol_result_tbl ORDER BY enrol_school_name desc , major_id asc;")

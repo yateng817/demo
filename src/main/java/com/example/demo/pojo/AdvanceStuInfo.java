@@ -9,10 +9,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AdvanceStuInfo {
+    @ExcelProperty("序号")
     int nId;            //序号
     String areaId;          //区域编号
-    @ExcelProperty("区县")
+    @ExcelProperty("区域")
     String areaName;         //区域名
+    @ExcelProperty("准考证号")
     String examinationId;       //准考证号
     @ExcelProperty("姓名")
     String name;                //姓名
@@ -23,6 +25,7 @@ public class AdvanceStuInfo {
     String loginNo;          //报名序号
     String tel;             //联系电话
     String address;         //家庭住址
+    @ExcelProperty("身份证号")
     String identifId;           //身份证号
     @ExcelProperty("录取学校")
     String gratuatedSchoolName;          //初中毕业学校名
@@ -36,8 +39,9 @@ public class AdvanceStuInfo {
     float listenSpeakScore;        //听力口语
     @ExcelProperty("成绩")
     float totalScore;           //总分
+    @ExcelProperty("录取志愿")
     String will1;               //志愿1
-    @ExcelProperty("录取志愿名称")
+    @ExcelProperty("专业名称")
     String majorName;           //专业的名称
     @ExcelProperty("结果")
     String otherDesc;            //其他说明
